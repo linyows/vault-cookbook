@@ -1,0 +1,27 @@
+listener "tcp" {
+  address = "<%= node['vault']['addr'] %>"
+  <% if node['vault']['tls_disable'] == false -%>
+  tls_cert_file = "<%= node['vault']['tls_cert_file'] %>"
+  tls_key_file = "<%= node['vault']['tls_key_file'] %>"
+  <% else -%>
+  tls_disable = true
+  <% end -%>
+}
+
+backend "consul" {
+  address = "<%= node['vault']['consul_addr'] %>"
+  path = "<%= node['vault']['consul_path'] %>"
+  scheme = "<%= node['vault']['scheme'] %>"
+}
+<% if node['vault']['consul_ha'] -%>
+
+ha_backend "consul" {}
+<% end -%>
+<% if node['vault']['disable_cache'] -%>
+
+disable_cache = true
+<% end -%>
+<% if node['vault']['disable_mlock'] -%>
+
+disable_mlock = true
+<% end -%>

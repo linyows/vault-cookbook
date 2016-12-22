@@ -1,0 +1,16 @@
+[Unit]
+Description=Vault Server
+Documentation=https://www.vaultproject.io
+Requires=network-online.target
+After=network-online.target consul.service
+
+[Service]
+User=vault
+Group=vault
+EnvironmentFile=-/etc/sysconfig/vault
+Restart=on-failure
+ExecStart=/usr/bin/vault server $OPTIONS
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

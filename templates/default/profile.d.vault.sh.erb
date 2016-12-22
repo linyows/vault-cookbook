@@ -1,0 +1,4 @@
+export VAULT_ADDR="<%= node['vault']['addr'] %>"
+<%- if node['vault']['skip_verify'] == true %>
+export VAULT_SKIP_VERIFY="true"
+<% end -%>
