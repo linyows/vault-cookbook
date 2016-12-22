@@ -1,5 +1,5 @@
 listener "tcp" {
-  address = "<%= node['vault']['addr'] %>"
+  address = "<%= node['vault']['tcp_addr'] %>"
   <% if node['vault']['tls_disable'] == false -%>
   tls_cert_file = "<%= node['vault']['tls_cert_file'] %>"
   tls_key_file = "<%= node['vault']['tls_key_file'] %>"
