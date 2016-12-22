@@ -13,8 +13,8 @@ default['vault']['lib_path']         = '/usr/lib/vault'
 default['vault']['command_options']  = ['-config=/etc/vault.conf']
 
 default['vault']['scheme']           = 'http'
-default['vault']['tcp_addr']         = '127.0.0.1:8200'
-default['vault']['addr']             = "#{default['vault']['scheme']}://#{default['vault']['tcp_addr']}"
+default['vault']['tcp_addr']         = '0.0.0.0:8200'
+default['vault']['addr']             = "#{default['vault']['scheme']}://127.0.0.1:8200"
 default['vault']['redirect_addr']    = ''
 default['vault']['cluster_addr']     = ''
 default['vault']['config_path']      = nil
