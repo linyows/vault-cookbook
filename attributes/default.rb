@@ -1,8 +1,8 @@
 # Cookbook Name: vault
 # Attribute: default
 
-default['vault']['version']          = '0.6.2'
-default['vault']['sha256']           = '91432c812b1264306f8d1ecf7dd237c3d7a8b2b6aebf4f887e487c4e7f69338c'
+default['vault']['version']          = '0.7.0'
+default['vault']['sha256']           = 'c6d97220e75335f75bd6f603bb23f1f16fe8e2a9d850ba59599b1a0e4d067aaa'
 default['vault']['download_url']     = "https://releases.hashicorp.com/vault/#{default['vault']['version']}/vault_#{default['vault']['version']}_linux_amd64.zip"
 
 default['vault']['conf_cookbook']    = 'vault'
