@@ -7,9 +7,9 @@ After=network-online.target consul.service
 [Service]
 User=vault
 Group=vault
-EnvironmentFile=-/etc/sysconfig/vault
+EnvironmentFile=-<%= node['vault']['sysconfig_dir'] %>/vault
 Restart=on-failure
-ExecStart=/usr/bin/vault server $OPTIONS
+ExecStart=<%= node['vault']['bin'] %>/vault server $OPTIONS
 KillSignal=SIGINT
 
 [Install]

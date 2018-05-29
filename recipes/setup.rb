@@ -30,20 +30,20 @@ directory "#{node['vault']['lib_path']}/bin" do
   action :create
 end
 
-cookbook_file '/usr/lib/systemd/system/vault.service' do
-  source 'vault.service'
+template "#{node['vault']['systemd_unit_dir']}/vault.service" do
+  source 'vault.service.erb'
   owner 'root'
   group 'root'
-  mode '0755'
+  mode '0644'
   cookbook node['vault']['systemd_cookbook']
   notifies :restart, 'service[vault]', :delayed
 end
 
-template '/etc/sysconfig/vault' do
+template "#{node['vault']['sysconfig_dir']}/vault" do
   source 'sysconfig.vault.erb'
   owner 'root'
   group 'root'
-  mode '0755'
+  mode '0644'
   notifies :restart, 'service[vault]', :delayed
 end
 
