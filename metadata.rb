@@ -1,10 +1,10 @@
-name 'vault'
-maintainer 'linyows'
+name             'vault'
+maintainer       'linyows'
 maintainer_email 'linyows@gmail.com'
-license 'all_rights'
-description 'Installs/Configures vault'
-long_description 'Installs/Configures vault'
-version '0.1.0'
+license          'MIT'
+description      'Installs/Configures vault'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          '0.2.0'
 
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Issues` link
