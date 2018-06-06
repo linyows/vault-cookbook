@@ -1,14 +1,1 @@
 OPTIONS="<%= node['vault']['command_options'].join(' ') %>"
-VAULT_ADDR="<%= node['vault']['addr'] %>"
-<%- if node['vault']['redirect_addr'] != '' %>
-VAULT_REDIRECT_ADDR="<%= node['vault']['redirect_addr'] %>"
-<% end -%>
-<%- if node['vault']['cluster_addr'] != '' %>
-VAULT_CLUSTER_ADDR="<%= node['vault']['cluster_addr'] %>"
-<% end -%>
-<%- if node['vault']['skip_verify'] == true %>
-VAULT_SKIP_VERIFY="true"
-<% end -%>
-<%- if node['vault']['config_path'] %>
-VAULT_CONFIG_PATH="<%= node['vault']['config_path'] %>"
-<% end -%>
