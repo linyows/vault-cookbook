@@ -18,7 +18,7 @@ end
 directory '/etc/vault.d' do
   owner 'vault'
   group 'vault'
-  mode '0700'
+  mode '0707'
   action :create
 end
 
