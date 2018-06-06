@@ -16,9 +16,9 @@ user 'vault' do
 end
 
 directory '/etc/vault.d' do
-  owner 'root'
-  group 'root'
-  mode '0755'
+  owner 'vault'
+  group 'vault'
+  mode '0700'
   action :create
 end
 
