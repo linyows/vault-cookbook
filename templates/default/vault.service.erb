@@ -10,7 +10,8 @@ Group=vault
 EnvironmentFile=-<%= node['vault']['sysconfig_dir'] %>/vault
 Restart=on-failure
 ExecStart=<%= node['vault']['bin'] %>/vault server $OPTIONS
-KillSignal=SIGINT
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
 
 [Install]
 WantedBy=multi-user.target
