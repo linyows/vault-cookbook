@@ -36,7 +36,7 @@ template "#{node['vault']['systemd_unit_dir']}/vault.service" do
   group 'root'
   mode '0644'
   cookbook node['vault']['systemd_cookbook']
-  notifies :restart, 'service[vault]', :delayed
+  notifies :reload, 'service[vault]', :delayed
 end
 
 template "#{node['vault']['sysconfig_dir']}/vault" do
@@ -44,7 +44,7 @@ template "#{node['vault']['sysconfig_dir']}/vault" do
   owner 'root'
   group 'root'
   mode '0644'
-  notifies :restart, 'service[vault]', :delayed
+  notifies :reload, 'service[vault]', :delayed
 end
 
 template '/etc/profile.d/vault.sh' do

@@ -22,5 +22,5 @@ end
 
 link "#{bin_path}/vault" do
   to "#{node['vault']['lib_path']}/bin/vault-#{node['vault']['version']}"
-  notifies :restart, 'service[vault]', :delayed
+  notifies :reload, 'service[vault]', :delayed
 end

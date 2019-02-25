@@ -6,6 +6,6 @@ include_recipe 'vault::config'
 include_recipe 'vault::install'
 
 service 'vault' do
-  supports :start => true, :status => true, :restart => true
+  supports :start => true, :status => true, :reload => true
   action [:start, :enable]
 end
