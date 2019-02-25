@@ -8,5 +8,5 @@ template '/etc/vault.conf' do
   mode '0644'
   cookbook node['vault']['conf_cookbook']
   action :create
-  notifies :restart, 'service[vault]', :delayed
+  notifies :reload, 'service[vault]', :delayed
 end
